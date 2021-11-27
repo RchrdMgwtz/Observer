@@ -22,7 +22,8 @@ namespace Observer
             this._watcher.Start();
         }
         
-        private static void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watcher, BluetoothLEAdvertisementReceivedEventArgs eventArgs)
+        private static void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watcher,
+            BluetoothLEAdvertisementReceivedEventArgs eventArgs)
         {
             var rssi = eventArgs.RawSignalStrengthInDBm;
             var uuid = eventArgs.Advertisement.ServiceUuids.FirstOrDefault();
