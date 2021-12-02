@@ -12,14 +12,14 @@ namespace Observer
 
         public Observer()
         {
-            this._watcher = new BluetoothLEAdvertisementWatcher();
+            _watcher = new BluetoothLEAdvertisementWatcher();
         }
 
         public void Start()
         {
-            this._watcher.Received += OnAdvertisementReceived;
-            this._watcher.AdvertisementFilter.Advertisement.ServiceUuids.Add(new Guid(ServiceUuid));
-            this._watcher.Start();
+            _watcher.Received += OnAdvertisementReceived;
+            _watcher.AdvertisementFilter.Advertisement.ServiceUuids.Add(new Guid(ServiceUuid));
+            _watcher.Start();
         }
         
         private static void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watcher,
